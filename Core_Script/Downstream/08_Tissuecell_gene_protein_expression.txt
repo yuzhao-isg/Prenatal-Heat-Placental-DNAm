@@ -1,0 +1,64 @@
+Purpose: To characterise genes mapped to significant CpGs and genes linked to significant eQTM/enhancer findings after EWAS, focusing on tissue expression, placental enrichment, and potential transcriptional regulation in the placenta.
+
+
+#######################
+1. Prepare the gene list
+#######################
+Create a non-redundant gene list from the post-EWAS results. Include genes annotated to significant CpGs and genes linked to significant eQTM/enhancer results. Keep a mapping table so each gene can be traced to its exposure.
+
+
+#######################
+2. Human Protein Atlas (HPA)
+#######################
+Website: https://www.proteinatlas.org/
+
+Objective: Obtain a functional description of each gene and review RNA and protein expression evidence across human tissues, including placenta where available. 
+
+1). Open the HPA website and search for the official gene symbol.
+2). Open the matching gene entry and verify the gene name, synonyms, and gene description.
+3). Review the Tissue section and RNA expression summary. Record the placenta value if available, including the expression measure and unit/scale displayed, and note tissues with relatively high expression.
+4). Review normal-tissue protein expression, including immunohistochemistry (IHC) staining, annotated cell types, staining level, and reliability/evidence. If no interpretable protein result is available, record “not available”.
+5). Where useful, inspect the Cell Type section for cell-type-specific RNA expression.
+
+
+#######################
+3. Placenta-enriched genes
+#######################
+Website: https://www.obgyn.cam.ac.uk/placentome/
+
+The PLACENTOME resource described by Gong et al. (2021) compares term placenta samples collected at delivery with GTEx tissues. This step asks whether genes of interest are relatively enriched in placenta compared with reference tissues.
+A. Identify the placenta-enriched gene set
+1.	Open PLACENTOME and select “PLACENTA VS GTEx”.
+2.	Open the “Placenta enrichment” view/list.
+3.	Apply the criteria used in this project: minimum placenta expression TPM ≥ 0.1 and fold change of placenta expression compared with the average across 49 GTEx tissues > 10.
+4.	Export or copy the qualifying gene list, retaining gene identifiers and the source/version or access date.
+Operational definition for this workflow: a gene is classified as placenta-enriched if it meets both criteria above. Report these thresholds explicitly; they should not be presented as universal criteria for placental specificity.
+B. Check overlap with genes of interest
+5.	Standardise gene symbols in both lists.
+6.	Perform a gene-symbol overlap between the post-EWAS gene list and the placenta-enriched gene list.
+7.	Create an indicator for each gene of interest (e.g., “Meets placenta-enrichment criteria: Yes/No”).
+8.	For overlapping genes, record placenta TPM and the fold-change metric if displayed or downloadable.
+C. Record TPM for individual genes
+9.	In “PLACENTA VS GTEx”, locate the gene-of-interest search/query function.
+10.	Enter the gene symbol and select the placenta tissue/sample.
+11.	Record the displayed placenta TPM, preserving units and any normalisation information shown.
+12.	If a gene is absent or no value is available, record “not available” rather than assuming TPM = 0.
+Important distinction: placenta enrichment is a relative comparison against GTEx reference tissues. A gene can be expressed in placenta without meeting the >10-fold enrichment criterion.
+
+
+#######################
+4. Placental transcriptional regulators
+#######################
+Tool: https://paquettelab.shinyapps.io/TRNApp/
+
+Reference: Paquette et al. (2024), “A genome scale transcriptional regulatory model of the human placenta”, Science Advances (https://doi.org/10.1126/sciadv.adf3411).
+Purpose: to investigate whether genes of interest are represented as target genes in a placenta-specific transcriptional regulatory network and, if so, which transcription factors (TFs) are associated with their regulation.
+
+Procedure: query TFs regulating a gene
+1.	Open TRNApp and navigate to “TRN Tools”.
+2.	Choose the function that searches for TFs regulating a target gene (the interface may label this as a gene search or “search gene”).
+3.	Enter a gene symbol and run the query.
+4.	Review the returned TF–target relationships. Record TF symbol, correlation coefficient, P value, Q value/FDR, and any additional model metrics provided.
+5.	Repeat for each gene of interest and record genes for which no result is returned.
+
+

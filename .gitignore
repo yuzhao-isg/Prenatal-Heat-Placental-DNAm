@@ -1,0 +1,23 @@
+# R and RStudio local files
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.Renviron
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*.key
+*.pem
+
+# R package environment
+renv/library/
+
+# Private data: adjust these paths to your actual folder names
+data/raw/
+data/participant_level/
+private_data/
