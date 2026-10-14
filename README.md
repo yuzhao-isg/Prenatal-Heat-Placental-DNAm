@@ -52,10 +52,8 @@ Location: `Core_Script/Downstream/06_Enrichment/`
 | File | Analysis |
 |---|---|
 | `GSEA_Overall.R` | Performs functional enrichment analyses using the `MSigDB_Hallmark_2020`, `DisGeNET`, and `ENCODE_and_ChEA_Consensus_TFs` gene-set libraries, covering biological pathways, disease associations, and transcription-factor target sets. |
-| `CromStates_Placenta.R` | Evaluates enrichment of CpGs with EWAS P values below 0.00001 (`P < 1e-5`) in fetal placental chromatin states. |
-| `PMD_Placenta.R` | Evaluates enrichment of CpGs with EWAS P values below 0.00001 (`P < 1e-5`) in placental PMDs, using the regions reported by Schroeder et al. (2013). |
-
-The `P < 1e-5` selection criterion applies to the chromatin-state and PMD enrichment analyses described above. See the individual scripts for the input selection and testing procedures used in each analysis.
+| `CromStates_Placenta.R` | Evaluates enrichment of CpGs with EWAS P values below `P < 1e-4` in fetal placental chromatin states. |
+| `PMD_Placenta.R` | Evaluates enrichment of CpGs with EWAS P values below `P < 1e-4` in placental PMDs, using the regions reported by Schroeder et al. (2013). |
 
 ### db
 
@@ -80,7 +78,7 @@ Contains documentation and usage guidelines for R packages used in the workflow.
 
 The companion EWAS summary-statistics dataset contains CpG-level association estimates and genomic coordinates. The exported regression coefficients and standard errors are expressed per 1 additional heat-exposure days on the original methylation beta-value scale.
 
-**Zenodo summary-statistics record:** 10.5281/zenodo.23368399.]
+**Zenodo summary-statistics record:** 10.5281/zenodo.23368399.
 
 ## Associated publication and citation
 
